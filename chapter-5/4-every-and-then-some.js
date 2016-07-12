@@ -8,11 +8,11 @@ Write two functions, every and some, that behave like these methods, except that
 rather than being a method.*/
 
 function every (array, f) {
-  for (var item of array) {if (!f(item)) return false};
-  return true;
+    for (var item of array) {if (!f(item)) return false};
+    return true;
 };
 
 function some (array, f) {
-  for (var item of array) {if (f(item)) return true};
-  return false;
+    for (var item of array) {if (f(item)) return true};
+    return false;
 };
