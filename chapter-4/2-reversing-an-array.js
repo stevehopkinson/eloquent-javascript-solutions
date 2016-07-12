@@ -4,14 +4,14 @@ reverseArrayInPlace, does what the reverse method does: it modifies the array gi
 its elements. Neither may use the standard reverse method. */
 
 function reverseArray(array) {
-  	var result = [];
-  	array.forEach(function (a) {result.unshift(a)});
-  	return result;
+	var result = [];
+	array.forEach(function (a) {result.unshift(a)});
+	return result;
 }
 
 function reverseArrayInPlace(array) {
-  	temp = reverseArray(array);
-  	for (var i = 0; i < array.length; i++) {
-    	  array[i] = temp[i];
-    }
+	temp = reverseArray(array);
+	for (var i = 0; i < array.length; i++) {
+		array[i] = temp[i];
+	}
 }
