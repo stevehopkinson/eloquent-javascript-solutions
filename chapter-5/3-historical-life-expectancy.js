@@ -2,35 +2,35 @@
 by taking their year of death, dividing it by 100, and rounding it up, as in Math.ceil(person.died / 100).*/
 
 function average(array) {
-  function plus(a, b) { return a + b; }
-  return array.reduce(plus) / array.length;
+	function plus(a, b) { return a + b; }
+	return array.reduce(plus) / array.length;
 }
 
 function groupBy(array, f) {
 	var groups = {};
-  	array.forEach(function (person) {
-      	var group = f(person);
-     	if  (groups[group]) {
-         	groups[group].push(person); 
-        } else {
-         	groups[group] = [person]; 
-        }
-    });
-  	return groups;
+	array.forEach(function (person) {
+    	var group = f(person);
+    	if  (groups[group]) {
+    		groups[group].push(person); 
+    	} else {
+    		groups[group] = [person]; 
+    	}
+	});
+	return groups;
 };
 
 function getCentury(person) {
- 	return Math.ceil(person.died / 100); 
+	return Math.ceil(person.died / 100); 
 }
 
 function getAge(person) {
- 	return person.died - person.born; 
+	return person.died - person.born; 
 }
 
 var centuries = groupBy(ancestry, getCentury);
 
 for (var century in centuries) { 
-  centuries[century] = average(centuries[century].map(getAge));
+	centuries[century] = average(centuries[century].map(getAge));
 };
 
 console.log(centuries);
