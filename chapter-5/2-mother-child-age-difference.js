@@ -2,8 +2,8 @@
 (the age of the mother when the child is born). */ 
 
 function average(array) {
-  function plus(a, b) { return a + b; }
-  return array.reduce(plus) / array.length;
+	function plus(a, b) { return a + b; }
+	return array.reduce(plus) / array.length;
 }
 
 function hasMother(person) {
@@ -16,7 +16,7 @@ function motherChildAgeDifference(person) {
 
 var byName = {};
 ancestry.forEach(function(person) {
-  byName[person.name] = person;
+	byName[person.name] = person;
 });
 
 console.log(average(ancestry.filter(hasMother).map(motherChildAgeDifference)));
