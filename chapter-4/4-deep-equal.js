@@ -5,9 +5,7 @@ with the same properties whose values are also equal when compared with a recurs
 
 function deepEqual (a, b) {
 	if (typeof a === "object" && typeof b === "object") {
-		for (var property in a) {
-			return deepEqual(a[property], b[property]);
-		}
+		return Object.keys(a).concat(Object.keys(b)).every(function (property) {return deepEqual(a[property], b[property])});
 	} else {
 		return a === b;
 	}	
