@@ -1,4 +1,5 @@
-# Using the example data set from this chapter, compute the average age difference between mothers and children (the age of the mother when the child is born). 
+/* Using the example data set from this chapter, compute the average age difference between mothers and children 
+(the age of the mother when the child is born). */ 
 
 function average(array) {
   function plus(a, b) { return a + b; }
