@@ -6,12 +6,12 @@ and see whether it does indeed return 55.*/
 
 function range(start, end, step = 1) {
 	var result = [], steps = Math.ceil((end - start) / step);
-  	for (var i = 0; i <= steps; i ++) {
-    	result.push(start + i * step); 
-    }
-  	return result;
+	for (var i = 0; i <= steps; i ++) {
+		result.push(start + i * step); 
+	}
+	return result;
 }
 
 function sum(array) {
-  	return array.reduce(function (a, b) {return a + b});
+	return array.reduce(function (a, b) {return a + b});
 }
