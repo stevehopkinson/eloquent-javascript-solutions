@@ -15,7 +15,7 @@ Passing this string to console.log should show something like this:
 When you have a program that generates this pattern, define a variable size = 8 and change the program so that it works for 
 any size, outputting a grid of the given width and height. */
 
-var size = 9, evenRow = "", oddRow = "";
+var size = 8, evenRow = "", oddRow = "";
 
 for (var i = 0; i < size; i++) {
 	oddRow += i % 2 ? " " : "#";
