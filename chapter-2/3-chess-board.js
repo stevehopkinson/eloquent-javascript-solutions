@@ -23,5 +23,5 @@ for (var i = 0; i < size; i++) {
 }
 
 for (var i = 0; i < size; i++) {
-	console.log(i % 2 ? oddRow : evenRow)
+	console.log(i % 2 ? oddRow : evenRow);
 }
