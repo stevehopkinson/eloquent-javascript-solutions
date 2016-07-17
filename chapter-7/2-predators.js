@@ -8,11 +8,14 @@ function Tiger() {
 
 Tiger.prototype.act = function(view) {
 	var space = view.find(" ");
-	if (this.energy > 300 && space)
+	if (this.energy > 200 && space)
 		return {type: "reproduce", direction: space};
 	var prey = view.find("O");
+	var towardsPrey = view.search("O");
 	if (prey)
 		return {type: "eat", direction: prey};
+	if (towardsPrey)
+		return {type: "move", direction: towardsPrey};
 	if (space)
 		return {type: "move", direction: space};
-};
+}
