@@ -1,4 +1,13 @@
-// Implement a breadth-first search algorithm that searches for the nearest instance of ch and returns the first direction.
+/* There are several obvious problems with our herbivores. First, they are terribly greedy, stuffing themselves with every 
+plant they see until they have wiped out the local plant life. Second, their randomized movement (recall that the view.find 
+method returns a random direction when multiple directions match) causes them to stumble around ineffectively and starve if 
+there don’t happen to be any plants nearby. And finally, they breed very fast, which makes the cycles between abundance and 
+famine quite intense.
+
+Write a new critter type that tries to address one or more of these points and substitute it for the old PlantEater type in 
+the valley world. See how it fares. Tweak it some more if necessary. */
+
+// Implemented a breadth-first search algorithm that searches for the nearest instance of ch and returns the first direction.
 
 View.prototype.search = function(ch) {
 	var frontier = [];
