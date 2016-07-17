@@ -22,7 +22,7 @@ View.prototype.search = function(ch) {
 			while (cameFrom[current].neighbour != start) {
 				current = cameFrom[current].neighbour;
 			}
-			return cameFrom[current].direction;
+		return cameFrom[current].direction;
     	};
       
 		for (var dir in directions) {
