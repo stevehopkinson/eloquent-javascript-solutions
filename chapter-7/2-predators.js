@@ -3,11 +3,12 @@ the herbivore critter. You’ll notice that stability is even harder to achieve 
 levels. Try to find a strategy to make the ecosystem run smoothly for at least a little while. */
 
 function Tiger() {
-	this.energy = 50;
+	this.energy = 20;
 }
+
 Tiger.prototype.act = function(view) {
 	var space = view.find(" ");
-	if (this.energy > 100 && space)
+	if (this.energy > 300 && space)
 		return {type: "reproduce", direction: space};
 	var prey = view.find("O");
 	if (prey)
