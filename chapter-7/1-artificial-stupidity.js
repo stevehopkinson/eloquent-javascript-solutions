@@ -1,4 +1,4 @@
-// Implement a breadth-first search algorithm.
+// Implement a breadth-first search algorithm that searches for the nearest instance of ch and returns the first direction.
 
 View.prototype.search = function(ch) {
 	var frontier = [];
@@ -32,17 +32,24 @@ View.prototype.search = function(ch) {
 
 function SmartPlantEater() {
 	this.energy = 20;
+	// Added a cooldown timer after eating to prevent crops being wiped out.
+  	this.timer = 5;
 }
 SmartPlantEater.prototype.act = function(view) {
 	var space = view.find(" ");
-	if (this.energy > 60 && space)
+	// Increased energy required for reproduction to prevent map being overrun.
+	if (this.energy > 200 && space)
 		return {type: "reproduce", direction: space};
 	var plant = view.find("*");
 	var towardsPlant = view.search("*");
-	if (plant)
+  	if (this.timer > 0 && space) {
+      	this.timer -= 1;
+        return {type: "move", direction: space};
+    }
+	else if (plant && this.timer == 0) {
+      	this.timer = 5;
 		return {type: "eat", direction: plant};
+    };
 	if (towardsPlant)
 		return {type: "move", direction: towardsPlant};
-	if (space)
-		return {type: "move", direction: space};
 };
