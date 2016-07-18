@@ -8,8 +8,9 @@ Add a getter property length to the prototype that computes the length of the ve
 from the origin (0, 0). */
 
 function Vector (x, y) {
-	this.x = x;
-	this.y = y;
+	// || 0 ensures Vector initializes with non-junk values.
+	this.x = x || 0;
+	this.y = y || 0;
 }
 
 Vector.prototype.plus = function(vector) {
